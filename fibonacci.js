@@ -11,5 +11,17 @@ window.onload = function() {
 
 	console.log(getFibPosition(7));
 
+	function getFibPosition(number, fibArr = [0, 1], i = 1) {
+
+		if (i == number) {
+			return fibArr[number];
+		} 
+		else {
+			fibArr.push(fibArr[i] + fibArr[i - 1]);
+			i++;
+			return getFibPosition(number, fibArr, i)
+		}
+	}
+console.log(getFibPosition(1));
 
 }
